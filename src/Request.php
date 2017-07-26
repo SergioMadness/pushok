@@ -87,7 +87,7 @@ class Request
      * @param string $key
      * @param $value
      */
-    public function addHeader(string $key, $value)
+    public function addHeader($key, $value)
     {
         $this->headers[$key] = $value;
     }
@@ -107,7 +107,7 @@ class Request
      *
      * @return array
      */
-    public function getHeaders(): array
+    public function getHeaders()
     {
         return $this->headers;
     }
@@ -117,7 +117,7 @@ class Request
      *
      * @return array
      */
-    public function getDecoratedHeaders(): array
+    public function getDecoratedHeaders()
     {
         $decoratedHeaders = [];
         foreach ($this->headers as $name => $value) {
@@ -131,7 +131,7 @@ class Request
      *
      * @return string
      */
-    public function getUri(): string
+    public function getUri()
     {
         return $this->uri;
     }
@@ -141,7 +141,7 @@ class Request
      *
      * @return string
      */
-    public function getBody(): string
+    public function getBody()
     {
         return $this->body;
     }
@@ -151,7 +151,7 @@ class Request
      *
      * @return array
      */
-    public function getOptions(): array
+    public function getOptions()
     {
         return $this->options;
     }

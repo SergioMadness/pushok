@@ -133,7 +133,7 @@ class Response implements ApnsResponseInterface
      * @param string $headers
      * @param string $body
      */
-    public function __construct(int $statusCode, string $headers, string $body)
+    public function __construct($statusCode, $headers, $body)
     {
         $this->statusCode = $statusCode;
         $this->apnsId = self::fetchApnsId($headers);
@@ -146,7 +146,7 @@ class Response implements ApnsResponseInterface
      * @param string $headers
      * @return string
      */
-    private static function fetchApnsId(string $headers): string
+    private static function fetchApnsId($headers)
     {
         $data = explode("\n", trim($headers));
 
@@ -169,7 +169,7 @@ class Response implements ApnsResponseInterface
      * @param string $body
      * @return string
      */
-    private static function fetchErrorReason(string $body): string
+    private static function fetchErrorReason($body)
     {
         return json_decode($body, true)['reason'] ?: '';
     }
@@ -189,7 +189,7 @@ class Response implements ApnsResponseInterface
      *
      * @return int
      */
-    public function getStatusCode(): int
+    public function getStatusCode()
     {
         return $this->statusCode;
     }
@@ -199,7 +199,7 @@ class Response implements ApnsResponseInterface
      *
      * @return string
      */
-    public function getReasonPhrase(): string
+    public function getReasonPhrase()
     {
         return self::$reasonPhrases[$this->statusCode] ?: '';
     }
@@ -209,7 +209,7 @@ class Response implements ApnsResponseInterface
      *
      * @return string
      */
-    public function getErrorReason(): string
+    public function getErrorReason()
     {
         return $this->errorReason;
     }
@@ -219,7 +219,7 @@ class Response implements ApnsResponseInterface
      *
      * @return string
      */
-    public function getErrorDescription(): string
+    public function getErrorDescription()
     {
         if (isset(self::$errorReasons[$this->statusCode][$this->errorReason])) {
             return self::$errorReasons[$this->statusCode][$this->errorReason];

@@ -68,7 +68,7 @@ class Notification
      * @param Payload $payload
      * @param string $deviceToken
      */
-    public function __construct(Payload $payload, string $deviceToken)
+    public function __construct(Payload $payload, $deviceToken)
     {
         $this->payload = $payload;
         $this->deviceToken = $deviceToken;
@@ -79,7 +79,7 @@ class Notification
      *
      * @return string
      */
-    public function getDeviceToken(): string
+    public function getDeviceToken()
     {
         return $this->deviceToken;
     }
@@ -89,7 +89,7 @@ class Notification
      *
      * @return Payload
      */
-    public function getPayload(): Payload
+    public function getPayload()
     {
         return $this->payload;
     }
@@ -110,7 +110,7 @@ class Notification
      * @param string $id
      * @return Notification
      */
-    public function setId(string $id): Notification
+    public function setId($id)
     {
         $this->id = $id;
 
@@ -133,7 +133,7 @@ class Notification
      * @param \DateTime $expirationAt
      * @return Notification
      */
-    public function setExpirationAt(\DateTime $expirationAt): Notification
+    public function setExpirationAt(\DateTime $expirationAt)
     {
         $this->expirationAt = $expirationAt;
 
@@ -155,7 +155,7 @@ class Notification
      *
      * @return Notification
      */
-    public function setHighPriority(): Notification
+    public function setHighPriority()
     {
         $this->priority = self::PRIORITY_HIGH;
 
@@ -167,7 +167,7 @@ class Notification
      *
      * @return Notification
      */
-    public function setLowPriority(): Notification
+    public function setLowPriority()
     {
         $this->priority = self::PRIORITY_LOW;
 
@@ -186,7 +186,7 @@ class Notification
      * @param string $collapseId
      * @return Notification
      */
-    public function setCollapseId(string $collapseId): Notification
+    public function setCollapseId($collapseId)
     {
         $this->collapseId = $collapseId;
 

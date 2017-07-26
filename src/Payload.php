@@ -90,7 +90,7 @@ class Payload implements \JsonSerializable
     /**
      * @return Payload
      */
-    public static function create(): Payload
+    public static function create()
     {
         return new self();
     }
@@ -101,7 +101,7 @@ class Payload implements \JsonSerializable
      * @param Alert $alert
      * @return Payload
      */
-    public function setAlert(Alert $alert): Payload
+    public function setAlert(Alert $alert)
     {
         $this->alert = $alert;
 
@@ -124,7 +124,7 @@ class Payload implements \JsonSerializable
      * @param int $value
      * @return Payload
      */
-    public function setBadge(int $value): Payload
+    public function setBadge($value)
     {
         $this->badge = $value;
 
@@ -147,7 +147,7 @@ class Payload implements \JsonSerializable
      * @param string $value
      * @return Payload
      */
-    public function setSound(string $value): Payload
+    public function setSound($value)
     {
         $this->sound = $value;
 
@@ -170,7 +170,7 @@ class Payload implements \JsonSerializable
      * @param bool $value
      * @return Payload
      */
-    public function setContentAvailability(bool $value): Payload
+    public function setContentAvailability($value)
     {
         $this->contentAvailable = $value;
 
@@ -193,7 +193,7 @@ class Payload implements \JsonSerializable
      * @param string $value
      * @return Payload
      */
-    public function setCategory(string $value): Payload
+    public function setCategory($value)
     {
         $this->category = $value;
 
@@ -216,7 +216,7 @@ class Payload implements \JsonSerializable
      * @param string $value
      * @return Payload
      */
-    public function setThreadId(string $value): Payload
+    public function setThreadId($value)
     {
         $this->threadId = $value;
 
@@ -241,7 +241,7 @@ class Payload implements \JsonSerializable
      * @return Payload
      * @throws InvalidPayloadException
      */
-    public function setCustomValue(string $key, $value): Payload
+    public function setCustomValue($key, $value)
     {
         if ($key === self::PAYLOAD_ROOT_KEY) {
             throw InvalidPayloadException::reservedKey();
@@ -273,7 +273,7 @@ class Payload implements \JsonSerializable
      *
      * @return string
      */
-    public function toJson(): string
+    public function toJson()
     {
         return json_encode($this, JSON_UNESCAPED_UNICODE | JSON_FORCE_OBJECT);
     }

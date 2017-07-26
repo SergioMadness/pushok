@@ -44,7 +44,7 @@ class Client
      * @param AuthProviderInterface $authProvider
      * @param bool $isProductionEnv
      */
-    public function __construct(AuthProviderInterface $authProvider, bool $isProductionEnv = false)
+    public function __construct(AuthProviderInterface $authProvider, $isProductionEnv = false)
     {
         $this->authProvider = $authProvider;
         $this->isProductionEnv = $isProductionEnv;

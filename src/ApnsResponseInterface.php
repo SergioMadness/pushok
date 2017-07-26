@@ -29,26 +29,26 @@ interface ApnsResponseInterface
      *
      * @return int|null
      */
-    public function getStatusCode(): int;
+    public function getStatusCode();
 
     /**
      * Get reason phrase.
      *
      * @return string
      */
-    public function getReasonPhrase(): string;
+    public function getReasonPhrase();
 
     /**
      * Get error reason.
      *
      * @return string
      */
-    public function getErrorReason(): string;
+    public function getErrorReason();
 
     /**
      * Get error description.
      *
      * @return string
      */
-    public function getErrorDescription(): string;
+    public function getErrorDescription();
 }
