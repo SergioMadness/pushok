@@ -98,9 +98,7 @@ class Client
 
             list($headers, $body) = explode("\r\n\r\n", $result, 2);
             $statusCode = curl_getinfo($handle, CURLINFO_HTTP_CODE);
-            $url = curl_getinfo($handle, CURLINFO_EFFECTIVE_URL);
-            $token = substr($url, strrpos($url, '/') + 1);
-            $responseCollection[] = new Response($statusCode, $headers, $body, $token);
+            $responseCollection[] = new Response($statusCode, $headers, $body);
         }
 
         curl_multi_close($mh);

@@ -51,12 +51,4 @@ interface ApnsResponseInterface
      * @return string
      */
     public function getErrorDescription(): string;
-
-
-    /**
-     * Get device token
-     *
-     * @return string
-     */
-    public function getDeviceToken() : string;
 }
